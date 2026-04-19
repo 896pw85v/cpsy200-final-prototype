@@ -1,6 +1,7 @@
 package manager;
 
 import domain.Equipment;
+import domain.EquipmentStatus; 
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,14 +14,14 @@ public class EquipmentManager {
     }
 
     public void removeEquipment(int id) {
-    for (Equipment e : equipmentList) {
-        if (e.getEquipmentId() == id) {
-            e.setStatus(EquipmentStatus.Removed);
-            return;
+        for (Equipment e : equipmentList) {
+            if (e.getEquipmentId() == id) {
+                e.setStatus(EquipmentStatus.REMOVED); 
+                return;
+            }
         }
+        System.out.println("Equipment not found!");
     }
-    System.out.println("Equipment not found!");
-}
 
     public List<Equipment> listEquipment() {
         return equipmentList;
