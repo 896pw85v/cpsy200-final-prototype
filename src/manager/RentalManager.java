@@ -2,6 +2,7 @@ package manager;
 
 import domain.Customer;
 import domain.Equipment;
+import domain.EquipmentStatus;
 import domain.Rental;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class RentalManager {
 
         // Check all equipment availability
         for (Equipment e : items) {
-            if (!e.isAvailable()) {
+            if (e.getStatus() != EquipmentStatus.AVAILABLE) {
                 System.out.println("Equipment not available: " + e.getName());
                 return;
             }
@@ -30,14 +31,13 @@ public class RentalManager {
 
         // Create rental
         Rental rental = new Rental();
-        rental.setId(nextRentalId++);
-        rental.setCustomerId(c.getId());
-        rental.setStartDate(new Date());
-        rental.setItems(items);
+        rental.setRentalId(nextRentalId++);
+        rental.setRentalDate(new Date());
+        rental.setEquipmentList(items);
 
-        // Mark all equipment as unavailable
+        // Mark all equipment as rented
         for (Equipment e : items) {
-            e.setAvailable(false);
+            e.setStatus(EquipmentStatus.RENTED);
         }
 
         rentals.add(rental);
@@ -48,13 +48,13 @@ public class RentalManager {
     public void returnRental(int id, Date returnDate) {
 
         for (Rental r : rentals) {
-            if (r.getId() == id) {
+            if (r.getRentalId() == id) {
 
                 r.setReturnDate(returnDate);
 
                 // Mark all equipment as available again
-                for (Equipment e : r.getItems()) {
-                    e.setAvailable(true);
+                for (Equipment e : r.getEquipmentList()) {
+                    e.setStatus(EquipmentStatus.AVAILABLE);
                 }
 
                 System.out.println("Rental returned successfully!");
