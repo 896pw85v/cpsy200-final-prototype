@@ -4,6 +4,7 @@ import com.sun.net.httpserver.HttpServer;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
+import java.awt.*;
 import java.io.*;
 import java.net.InetSocketAddress;
 import java.util.Arrays;
@@ -113,5 +114,8 @@ System.out.println(response);
         server.setExecutor(null);
         System.out.println("Server running at http://localhost:8080/");
         server.start();
+
+        File html = new File("./web/index.html");
+        Desktop.getDesktop().browse(html.toURI());
     }
 }
