@@ -13,15 +13,14 @@ public class EquipmentManager {
     }
 
     public void removeEquipment(int id) {
-        for (Equipment e : equipmentList) {
-            if (e.getId() == id) {
-                // Mark as unavailable instead of deleting
-                e.setAvailable(false);
-                return;
-            }
+    for (Equipment e : equipmentList) {
+        if (e.getEquipmentId() == id) {
+            e.setStatus(EquipmentStatus.Removed);
+            return;
         }
-        System.out.println("Equipment not found!");
     }
+    System.out.println("Equipment not found!");
+}
 
     public List<Equipment> listEquipment() {
         return equipmentList;
