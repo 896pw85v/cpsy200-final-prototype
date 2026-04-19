@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Village Rentals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="container">
+    <label for="actionSelect">
+        Request:
+    </label>
+    <select id="actionSelect">
+        <option value="">-- choose action --</option>
+        <option value="addEquipment">Add Equipment</option>
+        <option value="deleteEquipment">Delete Equipment</option>
+        <option value="addCustomer">Add Customer</option>
+        <option value="getAllEquipment">Display All Equipment</option>
+        <option value="getAllCustomers">Display All Customers</option>
+        <option value="getRentalsForCustomer">Rental for Customer</option>
+    </select>
+
+    <form id="formContainer"></form>
+
+    <button id="submitBtn">Submit</button>
+</main>
+    <pre id="output"></pre>
+    <script src="scripts.js"></script>
+</body>
+</html>

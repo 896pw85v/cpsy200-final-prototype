@@ -1,0 +1,88 @@
+/* Reset + smooth fonts */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+}
+
+/* Center everything */
+.container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #2a4d69;
+}
+
+/* Dropdown */
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 15px;
+}
+
+#formContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Dynamic form fields */
+#formContainer input {
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+#formContainer input:focus {
+  border-color: #2a4d69;
+  outline: none;
+}
+
+/* Submit button */
+#submitBtn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  background: #2a4d69;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#submitBtn:hover {
+  background: #1f3a50;
+}
+
+/* Output box */
+#output {
+  max-width: 500px;
+  margin: auto;
+  margin-top: 25px;
+  padding: 15px;
+  background: #eef3f7;
+  border-radius: 8px;
+  font-size: 14px;
+  white-space: pre-wrap;
+  border: 1px solid #d9e2ec;
+}
