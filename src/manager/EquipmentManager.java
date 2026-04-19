@@ -1,20 +1,29 @@
 package manager;
 
 import domain.Equipment;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EquipmentManager {
 
+    private List<Equipment> equipmentList = new ArrayList<>();
+
     public void addEquipment(Equipment e) {
-        // TODO: implement
+        equipmentList.add(e);
     }
 
     public void removeEquipment(int id) {
-        // TODO: implement
+        for (Equipment e : equipmentList) {
+            if (e.getId() == id) {
+                // Mark as unavailable instead of deleting
+                e.setAvailable(false);
+                return;
+            }
+        }
+        System.out.println("Equipment not found!");
     }
 
     public List<Equipment> listEquipment() {
-        // TODO: implement
-        return null;
+        return equipmentList;
     }
 }
