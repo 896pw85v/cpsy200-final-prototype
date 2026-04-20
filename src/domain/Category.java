@@ -20,5 +20,11 @@ public class Category {
         return description;
     }
 
-// Getters and Setters
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
