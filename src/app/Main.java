@@ -68,6 +68,7 @@ public class Main {
                 // Handle actions directly here
                 // -----------------------------
                 String response;
+                Handling h = new Handling();
 
                 switch (action) {
 
