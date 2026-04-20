@@ -67,5 +67,4 @@ public class Equipment {
     public void setStatus(EquipmentStatus status) {
         this.status = status;
     }
-// Getters and Setters
 }
