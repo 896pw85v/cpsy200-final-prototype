@@ -73,27 +73,27 @@ public class Main {
                 switch (action) {
 
                     case "addEquipment":
-                        response = "Added equipment: " + String.join(", ", args);
+                        response = "Added equipment: " + h.handleAddEquip(args);
                         break;
 
                     case "deleteEquipment":
-                        response = "Deleted equipment ID: " + args[0];
+                        response = h.handleDeleteEquipment(args);
                         break;
 
                     case "addCustomer":
-                        response = "Added customer: " + String.join(", ", args);
+                        response = h.handleAddCustomer(args);
                         break;
 
                     case "getAllEquipment":
-                        response = "Equipment list here";
+                        response = h.handleGetAllEquipment();
                         break;
 
                     case "getAllCustomers":
-                        response = "Customer list here";
+                        response = h.handleGetAllCustomers();
                         break;
 
                     case "getRentalsForCustomer":
-                        response = "Rentals for customer ID: " + args[0];
+                        response = h.handleProcessRental(args);
                         break;
 
                     default:

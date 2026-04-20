@@ -23,6 +23,13 @@ public class EquipmentManager {
         System.out.println("Equipment not found!");
     }
 
+    public Equipment findEquipmentById(int id) {
+        for (Equipment e : equipmentList) {
+            if (e.getEquipmentId() == id) return e;
+        }
+        return null;
+    }
+
     public List<Equipment> listEquipment() {
         return equipmentList;
     }

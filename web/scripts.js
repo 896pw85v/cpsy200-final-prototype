@@ -51,6 +51,8 @@ actionSelect.addEventListener("change", () => {
         <input type="date" id="rentalDate" placeholder="Rental Date">
         <label for="returnDate">Return Date</label>
         <input type="date" id="returnDate" placeholder="Return Date">
+        <label for="list">Items</label>
+        <input type="text" id="items" placeholder="Items to rent">
       `;
       break;
 
@@ -86,13 +88,12 @@ document.getElementById("submitBtn").addEventListener("click", () => {
         document.getElementById("lastName").value,
         document.getElementById("phone").value,
         document.getElementById("email").value,
-        document.getElementById("discountRate").value,
-        document.getElementById("isBanned").value
+        document.getElementById("discountRate").value
       ].join(",");
       break;
 
     case "getRentalsForCustomer":
-      data = "getRentalsForCustomer." + document.getElementById("customerId").value;
+      data = "getRentalsForCustomer," + document.getElementById("customerId").value + "," + document.getElementById("items");
       break;
 
     case "getAllEquipment":
