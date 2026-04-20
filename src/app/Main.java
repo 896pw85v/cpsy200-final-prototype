@@ -116,7 +116,7 @@ System.out.println(response);
         System.out.println("Server running at http://localhost:8080/");
         server.start();
 
-        File html = new File("./web/index.html");
+        File html = new File("web/index.html");
         Desktop.getDesktop().browse(html.toURI());
     }
 }
